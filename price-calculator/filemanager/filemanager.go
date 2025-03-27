@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"errors"
 	"os"
+	"time"
 )
 
 type Filemanager struct {
@@ -52,6 +53,8 @@ func (fm Filemanager) WriteResult(data any) error {
 	if err != nil {
 		return errors.New("Error creating file")
 	}
+
+	time.Sleep(3 * time.Second)
 
 	defer file.Close()
 
